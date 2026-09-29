@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -22,10 +23,16 @@ public class hashfunc {
             bw.close();
             System.out.println(blobFile);
             System.out.println(content);
+
+            writein("hello.txt");
+
+
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+
 
   
 
@@ -33,8 +40,23 @@ public class hashfunc {
         
         
     }
+    public static void writein(String filename){
+        try {
+            String sha1Hash = new String();
+            sha1Hash = hashFile(filename);
+            FileWriter bw = new FileWriter("git/index.txt");
+            bw.write(sha1Hash + " " + filename);
+            System.lineSeparator();
+            bw.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
 
     
+
     public static String hashFile(String filePath) throws IOException {
         Path path = Path.of(filePath);
         if(!Files.isRegularFile(path)){
