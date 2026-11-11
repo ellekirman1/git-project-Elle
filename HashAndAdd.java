@@ -31,7 +31,7 @@ public class HashAndAdd {
             String oneLine = br.readLine();
             String newLine = hash + " " + filename;
             while (oneLine != null) {
-                String fileInLine = oneLine.substring(newLine.lastIndexOf(" ") + 1);
+                String fileInLine = oneLine.substring(oneLine.lastIndexOf(" ") + 1);//finding filename in existing file;elle edit changed newfile to oneline
                 if (filePathToWrite.equals(fileInLine)) {
                     oneLine = newLine;
                     rewroteIndex = true;

@@ -51,15 +51,12 @@ public class Git {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
         if (counter == 4) {
             System.out.println("Git Repository Already Exists");
-
         } else {
             System.out.println("Git Repository Created\n" + //
                     "");
         }
-
     }
 
     public static String commit(String author, String message) {
