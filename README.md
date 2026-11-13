@@ -43,3 +43,16 @@ Writes a new commit using Git.commit()
 
 # checkout(String commitHash)
 Restores a previous commit using Git.restoreHistory().
+
+
+//elles readme - everything pretty much works - I made one small edit because I was confused on logic but it did not do much. everything works? things inside tester that give error are due to the checkout - so i am dealing with those in 5.2
+
+
+//in 5.2 - first i made refs and heads in initiate. changed what happens to new head in initate when i made HEAD. added code in commit that spesified what was going on in making branch path (got rid of ref: ) add branch in the git wrapper - add create branch in git
+//next i am changing commit inside of git so that i write into a branch not just the HEad
+//i need to change restore history to accept branch names
+//now im fixing deleterepofiles bc it deletes everything
+//update gitIndex
+
+//NOTE FOR ELLE; checking out a branch that contains a file with the same name as an untracked file in your working directory.
+//UNTESTED FOR THE MOSTPART

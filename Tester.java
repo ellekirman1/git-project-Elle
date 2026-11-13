@@ -49,5 +49,39 @@ public class Tester {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        // im using this to test branches
+        // 5.2 testing is below
+
+        GitWrapper.branch("feature");
+        System.out.println("here created feature");
+        GitWrapper.checkout("feature");
+        System.out.println("checkedout feature");
+
+        FileWriter bw2 = new FileWriter("myProgram/fileyay.txt");
+        bw2.write("testing feature");
+        bw2.close();
+
+        GitWrapper.add("myProgram/Oh.txt");
+        GitWrapper.commit("elle", "feature commit");
+        System.out.println("feature commit done");
+
+        // here im testing the main
+        GitWrapper.checkout("main");
+        System.out.println("checked out main");
+
+        // what if i run it twice - here it checks
+        GitWrapper.checkout("feature");
+        System.out.println("checked out feature again");
+
+        // edge cases - if ran it twice
+        try {
+            GitWrapper.branch("feature");
+        } catch (Exception e) {
+            System.out.println("twice did not work " + e.getMessage());
+        }
+
+        GitWrapper.checkout("doesnt Exist");
+
     }
 }

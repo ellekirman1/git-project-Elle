@@ -57,4 +57,9 @@ public class GitWrapper {
     public static void checkout(String commitHash) {
         Git.restoreHistory(commitHash);
     }
+
+
+    public static void branch(String name) {
+    Git.createBranch(name);
+}
 }
